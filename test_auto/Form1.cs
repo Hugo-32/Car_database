@@ -26,16 +26,16 @@ namespace test_auto
         {
             guna2DataGridView1.Rows.Add(10);
 
-            guna2DataGridView1.Rows[0].Cells[0].Value = Image.FromFile("D:\\Лабы\\test_auto\\1.png");
-            guna2DataGridView1.Rows[1].Cells[0].Value = Image.FromFile("D:\\Лабы\\test_auto\\2.png");
-            guna2DataGridView1.Rows[2].Cells[0].Value = Image.FromFile("D:\\Лабы\\test_auto\\3.png");
-            guna2DataGridView1.Rows[3].Cells[0].Value = Image.FromFile("D:\\Лабы\\test_auto\\4.png");
-            guna2DataGridView1.Rows[4].Cells[0].Value = Image.FromFile("D:\\Лабы\\test_auto\\5.png");
-            guna2DataGridView1.Rows[5].Cells[0].Value = Image.FromFile("D:\\Лабы\\test_auto\\6.png");
-            guna2DataGridView1.Rows[6].Cells[0].Value = Image.FromFile("D:\\Лабы\\test_auto\\7.png");
-            guna2DataGridView1.Rows[7].Cells[0].Value = Image.FromFile("D:\\Лабы\\test_auto\\8.png");
-            guna2DataGridView1.Rows[8].Cells[0].Value = Image.FromFile("D:\\Лабы\\test_auto\\9.png");
-            guna2DataGridView1.Rows[9].Cells[0].Value = Image.FromFile("D:\\Лабы\\test_auto\\10.png");
+            guna2DataGridView1.Rows[0].Cells[0].Value = Image.FromFile("D:\\Лабы\\test_auto\\images\\1.png");
+            guna2DataGridView1.Rows[1].Cells[0].Value = Image.FromFile("D:\\Лабы\\test_auto\\images\\2.png");
+            guna2DataGridView1.Rows[2].Cells[0].Value = Image.FromFile("D:\\Лабы\\test_auto\\images\\3.png");
+            guna2DataGridView1.Rows[3].Cells[0].Value = Image.FromFile("D:\\Лабы\\test_auto\\images\\4.png");
+            guna2DataGridView1.Rows[4].Cells[0].Value = Image.FromFile("D:\\Лабы\\test_auto\\images\\5.png");
+            guna2DataGridView1.Rows[5].Cells[0].Value = Image.FromFile("D:\\Лабы\\test_auto\\images\\6.png");
+            guna2DataGridView1.Rows[6].Cells[0].Value = Image.FromFile("D:\\Лабы\\test_auto\\images\\7.png");
+            guna2DataGridView1.Rows[7].Cells[0].Value = Image.FromFile("D:\\Лабы\\test_auto\\images\\8.png");
+            guna2DataGridView1.Rows[8].Cells[0].Value = Image.FromFile("D:\\Лабы\\test_auto\\images\\9.png");
+            guna2DataGridView1.Rows[9].Cells[0].Value = Image.FromFile("D:\\Лабы\\test_auto\\images\\10.png");
            
             guna2DataGridView1.Rows[0].Cells[1].Value = "Audi RS7";
             guna2DataGridView1.Rows[1].Cells[1].Value = "Audi RS5";
@@ -246,8 +246,8 @@ namespace test_auto
             label5.Text = row.Cells[5].Value.ToString();
             label6.Text = row.Cells[6].Value.ToString();
             label11.Text = label4.Text.Substring(0, label4.Text.Length - 3);
-            guna2PictureBox_car2.Load("D:\\Лабы\\test_auto\\" + (cpt + 1).ToString() + (cpt + 1).ToString() + ".png");
-            guna2PictureBox_car3.Load("D:\\Лабы\\test_auto\\" + (cpt + 1).ToString() + (cpt + 1).ToString() + (cpt + 1).ToString() + ".png");
+            guna2PictureBox_car2.Load("D:\\Лабы\\test_auto\\images\\" + (cpt + 1).ToString() + (cpt + 1).ToString() + ".png");
+            guna2PictureBox_car3.Load("D:\\Лабы\\test_auto\\images\\" + (cpt + 1).ToString() + (cpt + 1).ToString() + (cpt + 1).ToString() + ".png");
             guna2PictureBox_car1.Image = guna2PictureBox_car.Image;
         }
 
