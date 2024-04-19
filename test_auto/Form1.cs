@@ -17,94 +17,183 @@ namespace test_auto
     {
         List<int> matchingRowsIndices = new List<int>();
 
+        SqlConnection con;
+        SqlCommand cmd;
+
         public Form1()
         {
             InitializeComponent();
+            con = new SqlConnection(@"data source=ARTEM;initial catalog=car_db;integrated security=true;TrustServerCertificate=True");
+            getCars();
         }
         int cpt = 0;
         private void Form1_Load(object sender, EventArgs e)
         {
             guna2DataGridView1.Rows.Add(10);
 
-            guna2DataGridView1.Rows[0].Cells[0].Value = Image.FromFile("D:\\Лабы\\test_auto\\images\\1.png");
-            guna2DataGridView1.Rows[1].Cells[0].Value = Image.FromFile("D:\\Лабы\\test_auto\\images\\2.png");
-            guna2DataGridView1.Rows[2].Cells[0].Value = Image.FromFile("D:\\Лабы\\test_auto\\images\\3.png");
-            guna2DataGridView1.Rows[3].Cells[0].Value = Image.FromFile("D:\\Лабы\\test_auto\\images\\4.png");
-            guna2DataGridView1.Rows[4].Cells[0].Value = Image.FromFile("D:\\Лабы\\test_auto\\images\\5.png");
-            guna2DataGridView1.Rows[5].Cells[0].Value = Image.FromFile("D:\\Лабы\\test_auto\\images\\6.png");
-            guna2DataGridView1.Rows[6].Cells[0].Value = Image.FromFile("D:\\Лабы\\test_auto\\images\\7.png");
-            guna2DataGridView1.Rows[7].Cells[0].Value = Image.FromFile("D:\\Лабы\\test_auto\\images\\8.png");
-            guna2DataGridView1.Rows[8].Cells[0].Value = Image.FromFile("D:\\Лабы\\test_auto\\images\\9.png");
-            guna2DataGridView1.Rows[9].Cells[0].Value = Image.FromFile("D:\\Лабы\\test_auto\\images\\10.png");
+            for (int i = 0; i < 10; i++)
+            {
+                guna2DataGridView1.Rows[i].Cells[0].Value = Image.FromFile("D:\\Лабы\\test_auto\\test_auto\\images\\" + (i+1).ToString() + ".png");
+                guna2DataGridView1.Rows[i].Cells[1].Value = cars[i].name;
+                guna2DataGridView1.Rows[i].Cells[2].Value = cars[i].brand;
+                guna2DataGridView1.Rows[i].Cells[3].Value = cars[i].carcase;
+                guna2DataGridView1.Rows[i].Cells[4].Value = cars[i].hp;
+                guna2DataGridView1.Rows[i].Cells[5].Value = cars[i].capacity;
+                guna2DataGridView1.Rows[i].Cells[6].Value = cars[i].nm;
+            }
+
+            //guna2DataGridView1.Rows[0].Cells[0].Value = Image.FromFile("D:\\Лабы\\test_auto\\images\\1.png");
+            //guna2DataGridView1.Rows[1].Cells[0].Value = Image.FromFile("D:\\Лабы\\test_auto\\images\\2.png");
+            //guna2DataGridView1.Rows[2].Cells[0].Value = Image.FromFile("D:\\Лабы\\test_auto\\images\\3.png");
+            //guna2DataGridView1.Rows[3].Cells[0].Value = Image.FromFile("D:\\Лабы\\test_auto\\images\\4.png");
+            //guna2DataGridView1.Rows[4].Cells[0].Value = Image.FromFile("D:\\Лабы\\test_auto\\images\\5.png");
+            //guna2DataGridView1.Rows[5].Cells[0].Value = Image.FromFile("D:\\Лабы\\test_auto\\images\\6.png");
+            //guna2DataGridView1.Rows[6].Cells[0].Value = Image.FromFile("D:\\Лабы\\test_auto\\images\\7.png");
+            //guna2DataGridView1.Rows[7].Cells[0].Value = Image.FromFile("D:\\Лабы\\test_auto\\images\\8.png");
+            //guna2DataGridView1.Rows[8].Cells[0].Value = Image.FromFile("D:\\Лабы\\test_auto\\images\\9.png");
+            //guna2DataGridView1.Rows[9].Cells[0].Value = Image.FromFile("D:\\Лабы\\test_auto\\images\\10.png");
            
-            guna2DataGridView1.Rows[0].Cells[1].Value = "Audi RS7";
-            guna2DataGridView1.Rows[1].Cells[1].Value = "Audi RS5";
-            guna2DataGridView1.Rows[2].Cells[1].Value = "Audi R8";
-            guna2DataGridView1.Rows[3].Cells[1].Value = "Mercedes-Benz W214";
-            guna2DataGridView1.Rows[4].Cells[1].Value = "Audi A4";
-            guna2DataGridView1.Rows[5].Cells[1].Value = "Audi A5";
-            guna2DataGridView1.Rows[6].Cells[1].Value = "Audi Q3";
-            guna2DataGridView1.Rows[7].Cells[1].Value = "BMW 3";
-            guna2DataGridView1.Rows[8].Cells[1].Value = "BMW i5 G60";
-            guna2DataGridView1.Rows[9].Cells[1].Value = "BMW X6M";
+            //guna2DataGridView1.Rows[0].Cells[1].Value = "Audi RS7";
+            //guna2DataGridView1.Rows[1].Cells[1].Value = "Audi RS5";
+            //guna2DataGridView1.Rows[2].Cells[1].Value = "Audi R8";
+            //guna2DataGridView1.Rows[3].Cells[1].Value = "Mercedes-Benz W214";
+            //guna2DataGridView1.Rows[4].Cells[1].Value = "Audi A4";
+            //guna2DataGridView1.Rows[5].Cells[1].Value = "Audi A5";
+            //guna2DataGridView1.Rows[6].Cells[1].Value = "Audi Q3";
+            //guna2DataGridView1.Rows[7].Cells[1].Value = "BMW 3";
+            //guna2DataGridView1.Rows[8].Cells[1].Value = "BMW i5 G60";
+            //guna2DataGridView1.Rows[9].Cells[1].Value = "BMW X6M";
 
-            guna2DataGridView1.Rows[0].Cells[2].Value = "Audi";
-            guna2DataGridView1.Rows[1].Cells[2].Value = "Audi";
-            guna2DataGridView1.Rows[2].Cells[2].Value = "Audi";
-            guna2DataGridView1.Rows[3].Cells[2].Value = "Mercedes";
-            guna2DataGridView1.Rows[4].Cells[2].Value = "Audi";
-            guna2DataGridView1.Rows[5].Cells[2].Value = "Audi";
-            guna2DataGridView1.Rows[6].Cells[2].Value = "Audi";
-            guna2DataGridView1.Rows[7].Cells[2].Value = "BMW";
-            guna2DataGridView1.Rows[8].Cells[2].Value = "BMW";
-            guna2DataGridView1.Rows[9].Cells[2].Value = "BMW";
+            //guna2DataGridView1.Rows[0].Cells[2].Value = "Audi";
+            //guna2DataGridView1.Rows[1].Cells[2].Value = "Audi";
+            //guna2DataGridView1.Rows[2].Cells[2].Value = "Audi";
+            //guna2DataGridView1.Rows[3].Cells[2].Value = "Mercedes";
+            //guna2DataGridView1.Rows[4].Cells[2].Value = "Audi";
+            //guna2DataGridView1.Rows[5].Cells[2].Value = "Audi";
+            //guna2DataGridView1.Rows[6].Cells[2].Value = "Audi";
+            //guna2DataGridView1.Rows[7].Cells[2].Value = "BMW";
+            //guna2DataGridView1.Rows[8].Cells[2].Value = "BMW";
+            //guna2DataGridView1.Rows[9].Cells[2].Value = "BMW";
 
-            guna2DataGridView1.Rows[0].Cells[3].Value = "Седан";
-            guna2DataGridView1.Rows[1].Cells[3].Value = "Седан";
-            guna2DataGridView1.Rows[2].Cells[3].Value = "Купе";
-            guna2DataGridView1.Rows[3].Cells[3].Value = "Универсал";
-            guna2DataGridView1.Rows[4].Cells[3].Value = "Универсал";
-            guna2DataGridView1.Rows[5].Cells[3].Value = "Купе";
-            guna2DataGridView1.Rows[6].Cells[3].Value = "Кроссовер";
-            guna2DataGridView1.Rows[7].Cells[3].Value = "Седан";
-            guna2DataGridView1.Rows[8].Cells[3].Value = "Седан";
-            guna2DataGridView1.Rows[9].Cells[3].Value = "Кроссовер";
+            //guna2DataGridView1.Rows[0].Cells[3].Value = "Седан";
+            //guna2DataGridView1.Rows[1].Cells[3].Value = "Седан";
+            //guna2DataGridView1.Rows[2].Cells[3].Value = "Купе";
+            //guna2DataGridView1.Rows[3].Cells[3].Value = "Универсал";
+            //guna2DataGridView1.Rows[4].Cells[3].Value = "Универсал";
+            //guna2DataGridView1.Rows[5].Cells[3].Value = "Купе";
+            //guna2DataGridView1.Rows[6].Cells[3].Value = "Кроссовер";
+            //guna2DataGridView1.Rows[7].Cells[3].Value = "Седан";
+            //guna2DataGridView1.Rows[8].Cells[3].Value = "Седан";
+            //guna2DataGridView1.Rows[9].Cells[3].Value = "Кроссовер";
 
-            guna2DataGridView1.Rows[0].Cells[4].Value = "600 л/с";
-            guna2DataGridView1.Rows[1].Cells[4].Value = "444 л/с";
-            guna2DataGridView1.Rows[2].Cells[4].Value = "562 л/с";
-            guna2DataGridView1.Rows[3].Cells[4].Value = "200 л/с";
-            guna2DataGridView1.Rows[4].Cells[4].Value = "250 л/с";
-            guna2DataGridView1.Rows[5].Cells[4].Value = "250 л/с";
-            guna2DataGridView1.Rows[6].Cells[4].Value = "184 л/с";
-            guna2DataGridView1.Rows[7].Cells[4].Value = "300 л/с";
-            guna2DataGridView1.Rows[8].Cells[4].Value = "270 л/с";
-            guna2DataGridView1.Rows[9].Cells[4].Value = "320 л/с";
+            //guna2DataGridView1.Rows[0].Cells[4].Value = "600 л/с";
+            //guna2DataGridView1.Rows[1].Cells[4].Value = "444 л/с";
+            //guna2DataGridView1.Rows[2].Cells[4].Value = "562 л/с";
+            //guna2DataGridView1.Rows[3].Cells[4].Value = "200 л/с";
+            //guna2DataGridView1.Rows[4].Cells[4].Value = "250 л/с";
+            //guna2DataGridView1.Rows[5].Cells[4].Value = "250 л/с";
+            //guna2DataGridView1.Rows[6].Cells[4].Value = "184 л/с";
+            //guna2DataGridView1.Rows[7].Cells[4].Value = "300 л/с";
+            //guna2DataGridView1.Rows[8].Cells[4].Value = "270 л/с";
+            //guna2DataGridView1.Rows[9].Cells[4].Value = "320 л/с";
 
-            guna2DataGridView1.Rows[0].Cells[5].Value = "4.0L";
-            guna2DataGridView1.Rows[1].Cells[5].Value = "2.9L";
-            guna2DataGridView1.Rows[2].Cells[5].Value = "5.2L";
-            guna2DataGridView1.Rows[3].Cells[5].Value = "2.0L";
-            guna2DataGridView1.Rows[4].Cells[5].Value = "2.0L";
-            guna2DataGridView1.Rows[5].Cells[5].Value = "2.0L";
-            guna2DataGridView1.Rows[6].Cells[5].Value = "2.0L";
-            guna2DataGridView1.Rows[7].Cells[5].Value = "2.3L";
-            guna2DataGridView1.Rows[8].Cells[5].Value = "2.1L";
-            guna2DataGridView1.Rows[9].Cells[5].Value = "2.4L";
+            //guna2DataGridView1.Rows[0].Cells[5].Value = "4.0L";
+            //guna2DataGridView1.Rows[1].Cells[5].Value = "2.9L";
+            //guna2DataGridView1.Rows[2].Cells[5].Value = "5.2L";
+            //guna2DataGridView1.Rows[3].Cells[5].Value = "2.0L";
+            //guna2DataGridView1.Rows[4].Cells[5].Value = "2.0L";
+            //guna2DataGridView1.Rows[5].Cells[5].Value = "2.0L";
+            //guna2DataGridView1.Rows[6].Cells[5].Value = "2.0L";
+            //guna2DataGridView1.Rows[7].Cells[5].Value = "2.3L";
+            //guna2DataGridView1.Rows[8].Cells[5].Value = "2.1L";
+            //guna2DataGridView1.Rows[9].Cells[5].Value = "2.4L";
 
 
-            guna2DataGridView1.Rows[0].Cells[6].Value = "800Nm";
-            guna2DataGridView1.Rows[1].Cells[6].Value = "600Nm";
-            guna2DataGridView1.Rows[2].Cells[6].Value = "540Nm";
-            guna2DataGridView1.Rows[3].Cells[6].Value = "320Nm";
-            guna2DataGridView1.Rows[4].Cells[6].Value = "350Nm";
-            guna2DataGridView1.Rows[5].Cells[6].Value = "370Nm";
-            guna2DataGridView1.Rows[6].Cells[6].Value = "340Nm";
-            guna2DataGridView1.Rows[7].Cells[6].Value = "400Nm";
-            guna2DataGridView1.Rows[8].Cells[6].Value = "380Nm";
-            guna2DataGridView1.Rows[9].Cells[6].Value = "420Nm";
+            //guna2DataGridView1.Rows[0].Cells[6].Value = "800Nm";
+            //guna2DataGridView1.Rows[1].Cells[6].Value = "600Nm";
+            //guna2DataGridView1.Rows[2].Cells[6].Value = "540Nm";
+            //guna2DataGridView1.Rows[3].Cells[6].Value = "320Nm";
+            //guna2DataGridView1.Rows[4].Cells[6].Value = "350Nm";
+            //guna2DataGridView1.Rows[5].Cells[6].Value = "370Nm";
+            //guna2DataGridView1.Rows[6].Cells[6].Value = "340Nm";
+            //guna2DataGridView1.Rows[7].Cells[6].Value = "400Nm";
+            //guna2DataGridView1.Rows[8].Cells[6].Value = "380Nm";
+            //guna2DataGridView1.Rows[9].Cells[6].Value = "420Nm";
             FillComboBox();
         }
+
+        public void getCars()
+        {
+            con.Open();
+            string selectquery = "select * from car_table";
+            SqlCommand cmd = new SqlCommand(selectquery, con);
+            SqlDataReader reader1;
+            reader1 = cmd.ExecuteReader();
+            string carname;
+            string carcase;
+            string carbrand;
+            string description;
+            string hp;
+            string capacity;
+            string nm;
+            int id;
+
+            while (reader1.Read())
+            {
+                //В цикле считываются все машины из бд в переменные
+                carname = reader1.GetValue(1).ToString();
+                carcase = reader1.GetValue(3).ToString();
+                carbrand = reader1.GetValue(2).ToString();
+                description = reader1.GetValue(4).ToString();
+                hp = reader1.GetValue(5).ToString();
+                capacity = reader1.GetValue(6).ToString();
+                nm = reader1.GetValue(7).ToString();
+                id = (int)Convert.ToInt64(Convert.ToDouble(reader1.GetValue(0)));
+
+                Car car = new Car(carname, carbrand, carcase, description, id, hp, capacity, nm);
+                Console.WriteLine(carname + " " + carcase + " " + carbrand + " " + description + " " + id.ToString());
+                cars.Add(car);
+
+            }
+
+            con.Close();
+        }
+
+        public class Car
+        {
+            public string name;
+            public string brand;
+            public string carcase;
+            public string description;
+            public string hp;
+            public string capacity;
+            public string nm;
+            public int id;
+            Car()
+            {
+                name = "";
+                brand = "";
+                carcase = "";
+                description = "";
+                id = 0;
+                hp = "";
+                capacity = "";
+                nm = "";
+            }
+            public Car(string name, string brand, string carcase, string description, int id, string hp, string capacity, string nm)
+            {
+                this.name = name;
+                this.brand = brand;
+                this.carcase = carcase;
+                this.description = description;
+                this.id = id;
+                this.hp = hp;
+                this.capacity = capacity;
+                this.nm = nm;
+            }
+        }
+
+        List<Car> cars = new List<Car>();
 
         private void FillComboBox()
         {
@@ -246,8 +335,8 @@ namespace test_auto
             label5.Text = row.Cells[5].Value.ToString();
             label6.Text = row.Cells[6].Value.ToString();
             label11.Text = label4.Text.Substring(0, label4.Text.Length - 3);
-            guna2PictureBox_car2.Load("D:\\Лабы\\test_auto\\images\\" + (cpt + 1).ToString() + (cpt + 1).ToString() + ".png");
-            guna2PictureBox_car3.Load("D:\\Лабы\\test_auto\\images\\" + (cpt + 1).ToString() + (cpt + 1).ToString() + (cpt + 1).ToString() + ".png");
+            guna2PictureBox_car2.Load("D:\\Лабы\\test_auto\\test_auto\\images\\" + (cpt + 1).ToString() + (cpt + 1).ToString() + ".png");
+            guna2PictureBox_car3.Load("D:\\Лабы\\test_auto\\test_auto\\images\\" + (cpt + 1).ToString() + (cpt + 1).ToString() + (cpt + 1).ToString() + ".png");
             guna2PictureBox_car1.Image = guna2PictureBox_car.Image;
         }
 
