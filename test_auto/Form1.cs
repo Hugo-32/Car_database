@@ -42,83 +42,7 @@ namespace test_auto
                 guna2DataGridView1.Rows[i].Cells[6].Value = cars[i].nm;
             }
 
-            //guna2DataGridView1.Rows[0].Cells[0].Value = Image.FromFile("D:\\Лабы\\test_auto\\images\\1.png");
-            //guna2DataGridView1.Rows[1].Cells[0].Value = Image.FromFile("D:\\Лабы\\test_auto\\images\\2.png");
-            //guna2DataGridView1.Rows[2].Cells[0].Value = Image.FromFile("D:\\Лабы\\test_auto\\images\\3.png");
-            //guna2DataGridView1.Rows[3].Cells[0].Value = Image.FromFile("D:\\Лабы\\test_auto\\images\\4.png");
-            //guna2DataGridView1.Rows[4].Cells[0].Value = Image.FromFile("D:\\Лабы\\test_auto\\images\\5.png");
-            //guna2DataGridView1.Rows[5].Cells[0].Value = Image.FromFile("D:\\Лабы\\test_auto\\images\\6.png");
-            //guna2DataGridView1.Rows[6].Cells[0].Value = Image.FromFile("D:\\Лабы\\test_auto\\images\\7.png");
-            //guna2DataGridView1.Rows[7].Cells[0].Value = Image.FromFile("D:\\Лабы\\test_auto\\images\\8.png");
-            //guna2DataGridView1.Rows[8].Cells[0].Value = Image.FromFile("D:\\Лабы\\test_auto\\images\\9.png");
-            //guna2DataGridView1.Rows[9].Cells[0].Value = Image.FromFile("D:\\Лабы\\test_auto\\images\\10.png");
-           
-            //guna2DataGridView1.Rows[0].Cells[1].Value = "Audi RS7";
-            //guna2DataGridView1.Rows[1].Cells[1].Value = "Audi RS5";
-            //guna2DataGridView1.Rows[2].Cells[1].Value = "Audi R8";
-            //guna2DataGridView1.Rows[3].Cells[1].Value = "Mercedes-Benz W214";
-            //guna2DataGridView1.Rows[4].Cells[1].Value = "Audi A4";
-            //guna2DataGridView1.Rows[5].Cells[1].Value = "Audi A5";
-            //guna2DataGridView1.Rows[6].Cells[1].Value = "Audi Q3";
-            //guna2DataGridView1.Rows[7].Cells[1].Value = "BMW 3";
-            //guna2DataGridView1.Rows[8].Cells[1].Value = "BMW i5 G60";
-            //guna2DataGridView1.Rows[9].Cells[1].Value = "BMW X6M";
-
-            //guna2DataGridView1.Rows[0].Cells[2].Value = "Audi";
-            //guna2DataGridView1.Rows[1].Cells[2].Value = "Audi";
-            //guna2DataGridView1.Rows[2].Cells[2].Value = "Audi";
-            //guna2DataGridView1.Rows[3].Cells[2].Value = "Mercedes";
-            //guna2DataGridView1.Rows[4].Cells[2].Value = "Audi";
-            //guna2DataGridView1.Rows[5].Cells[2].Value = "Audi";
-            //guna2DataGridView1.Rows[6].Cells[2].Value = "Audi";
-            //guna2DataGridView1.Rows[7].Cells[2].Value = "BMW";
-            //guna2DataGridView1.Rows[8].Cells[2].Value = "BMW";
-            //guna2DataGridView1.Rows[9].Cells[2].Value = "BMW";
-
-            //guna2DataGridView1.Rows[0].Cells[3].Value = "Седан";
-            //guna2DataGridView1.Rows[1].Cells[3].Value = "Седан";
-            //guna2DataGridView1.Rows[2].Cells[3].Value = "Купе";
-            //guna2DataGridView1.Rows[3].Cells[3].Value = "Универсал";
-            //guna2DataGridView1.Rows[4].Cells[3].Value = "Универсал";
-            //guna2DataGridView1.Rows[5].Cells[3].Value = "Купе";
-            //guna2DataGridView1.Rows[6].Cells[3].Value = "Кроссовер";
-            //guna2DataGridView1.Rows[7].Cells[3].Value = "Седан";
-            //guna2DataGridView1.Rows[8].Cells[3].Value = "Седан";
-            //guna2DataGridView1.Rows[9].Cells[3].Value = "Кроссовер";
-
-            //guna2DataGridView1.Rows[0].Cells[4].Value = "600 л/с";
-            //guna2DataGridView1.Rows[1].Cells[4].Value = "444 л/с";
-            //guna2DataGridView1.Rows[2].Cells[4].Value = "562 л/с";
-            //guna2DataGridView1.Rows[3].Cells[4].Value = "200 л/с";
-            //guna2DataGridView1.Rows[4].Cells[4].Value = "250 л/с";
-            //guna2DataGridView1.Rows[5].Cells[4].Value = "250 л/с";
-            //guna2DataGridView1.Rows[6].Cells[4].Value = "184 л/с";
-            //guna2DataGridView1.Rows[7].Cells[4].Value = "300 л/с";
-            //guna2DataGridView1.Rows[8].Cells[4].Value = "270 л/с";
-            //guna2DataGridView1.Rows[9].Cells[4].Value = "320 л/с";
-
-            //guna2DataGridView1.Rows[0].Cells[5].Value = "4.0L";
-            //guna2DataGridView1.Rows[1].Cells[5].Value = "2.9L";
-            //guna2DataGridView1.Rows[2].Cells[5].Value = "5.2L";
-            //guna2DataGridView1.Rows[3].Cells[5].Value = "2.0L";
-            //guna2DataGridView1.Rows[4].Cells[5].Value = "2.0L";
-            //guna2DataGridView1.Rows[5].Cells[5].Value = "2.0L";
-            //guna2DataGridView1.Rows[6].Cells[5].Value = "2.0L";
-            //guna2DataGridView1.Rows[7].Cells[5].Value = "2.3L";
-            //guna2DataGridView1.Rows[8].Cells[5].Value = "2.1L";
-            //guna2DataGridView1.Rows[9].Cells[5].Value = "2.4L";
-
-
-            //guna2DataGridView1.Rows[0].Cells[6].Value = "800Nm";
-            //guna2DataGridView1.Rows[1].Cells[6].Value = "600Nm";
-            //guna2DataGridView1.Rows[2].Cells[6].Value = "540Nm";
-            //guna2DataGridView1.Rows[3].Cells[6].Value = "320Nm";
-            //guna2DataGridView1.Rows[4].Cells[6].Value = "350Nm";
-            //guna2DataGridView1.Rows[5].Cells[6].Value = "370Nm";
-            //guna2DataGridView1.Rows[6].Cells[6].Value = "340Nm";
-            //guna2DataGridView1.Rows[7].Cells[6].Value = "400Nm";
-            //guna2DataGridView1.Rows[8].Cells[6].Value = "380Nm";
-            //guna2DataGridView1.Rows[9].Cells[6].Value = "420Nm";
+            
             FillComboBox();
         }
 
@@ -140,7 +64,6 @@ namespace test_auto
 
             while (reader1.Read())
             {
-                //В цикле считываются все машины из бд в переменные
                 carname = reader1.GetValue(1).ToString();
                 carcase = reader1.GetValue(3).ToString();
                 carbrand = reader1.GetValue(2).ToString();
@@ -254,14 +177,14 @@ namespace test_auto
 
                     if (brand == selectedBrand && bodyType == selectedBodyType)
                     {
-                        cpt = i; // Обновляем счетчик на индекс текущей строки
+                        cpt = i; 
                         DisplayCar(row);
                         return;
                     }
                 }
             }
 
-            // Если не найдено подходящей машины, переходим к первой строке
+            
             for (int i = 0; i <= cpt; i++)
             {
                 DataGridViewRow row = guna2DataGridView1.Rows[i];
@@ -272,7 +195,7 @@ namespace test_auto
 
                     if (brand == selectedBrand && bodyType == selectedBodyType)
                     {
-                        cpt = i; // Обновляем счетчик на индекс текущей строки
+                        cpt = i; 
                         DisplayCar(row);
                         return;
                     }
@@ -301,14 +224,13 @@ namespace test_auto
 
                     if (brand == selectedBrand && bodyType == selectedBodyType)
                     {
-                        cpt = i; // Обновляем счетчик на индекс текущей строки
+                        cpt = i; 
                         DisplayCar(row);
                         return;
                     }
                 }
             }
 
-            // Если не найдено подходящей машины, переходим к последней строке
             for (int i = guna2DataGridView1.Rows.Count - 1; i >= cpt; i--)
             {
                 DataGridViewRow row = guna2DataGridView1.Rows[i];
@@ -319,7 +241,7 @@ namespace test_auto
 
                     if (brand == selectedBrand && bodyType == selectedBodyType)
                     {
-                        cpt = i; // Обновляем счетчик на индекс текущей строки
+                        cpt = i;
                         DisplayCar(row);
                         return;
                     }
